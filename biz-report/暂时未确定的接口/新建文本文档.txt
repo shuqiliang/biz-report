@@ -1,0 +1,54 @@
+                                                String cardno=jsonArray_1.get(0).toString();
+						data_data_json.put("cardNumber",cardno);
+						
+						String vipname=jsonArray_1.get(1).toString();
+						data_data_json.put("name",vipname);
+						
+						String opencarddate=jsonArray_1.get(2).toString();
+						data_data_json.put("createdTime",opencarddate);
+						
+						String mobile=jsonArray_1.get(3).toString();
+						data_data_json.put("mobile",mobile);
+						
+						int integral=new Integer(jsonArray_1.get(4).toString());
+						data_data_json.put("score",integral);
+						
+						double amount=new Double(jsonArray_1.get(5).toString());
+						data_data_json.put("balance",amount);
+						
+						int rfmtype=new Integer(jsonArray_1.get(6).toString());
+						data_data_json.put("rfmType",rfmtype);
+						
+						double buy_rate=new Double(jsonArray_1.get(7).toString());
+						data_data_json.put("buyRate",buy_rate);
+						
+						double buy_amt=new Double(jsonArray_1.get(8).toString());
+						data_data_json.put("buyAmount",buy_amt);
+						
+						Object obj=(Object)jsonArray_1.get(9);
+						if(obj.equals(null)){
+							data_data_json.put("lastTime",0);
+						}else{
+							int lastdate=new Integer(obj.toString());
+							data_data_json.put("lastTime",lastdate);
+						}
+						
+						int dormancyDays=new Integer(jsonArray_1.get(10).toString());
+						data_data_json.put("dormancyDays",dormancyDays);
+
+
+
+
+
+
+
+
+
+{
+ "table":APP_VIPANS02,
+ "columns":["CARDNO","VIPNAME","OPENCARDDATE","MOBILE","INTEGRAL","AMOUNT","RFMTYPE","BUY_RATE","BUY_AMT","LASTDATE","DORMANTDAYS"],
+ "params":{
+"column":"C_STORE_ID","condition":411
+ },
+ "orderby":[{"column":"BUY_AMT","asc":false}]
+}
